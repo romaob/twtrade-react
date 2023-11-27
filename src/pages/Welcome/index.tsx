@@ -1,6 +1,23 @@
 import React from 'react'
+import Button from '../../components/button'
 
 export default function Welcome(): JSX.Element {
+
+  /**
+   * Function to get the button text based on the search input state
+   * @returns {string} The button text
+   */
+  function getButtonText() {
+    return 'Search All Posts!'
+  }
+
+  /**
+   * Function to handle the search button click
+   */
+  function handleSearchButtonClick() {
+    console.log('Search button clicked!')
+  }
+
   return (
     <div className='page' data-testid='welcome-page'>
       <div className='page-content'>
@@ -22,9 +39,7 @@ export default function Welcome(): JSX.Element {
             placeholder='Search for a model, brand, post description...'
             data-testid='welcome-search-input'
           />
-          <button className='search-button' data-testid='welcome-search-button'>
-            Search All Posts!
-          </button>
+          <Button text={getButtonText()} testId='welcome-search-button' onClick={handleSearchButtonClick}/>
         </div>
       </div>
     </div>

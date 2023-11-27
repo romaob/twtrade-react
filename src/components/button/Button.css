@@ -1,0 +1,20 @@
+.appButton {
+    padding: var(--spacing-small);
+    border-radius: var(--spacing-xsmall);
+    border: 0;
+    font-size: var(--text-medium);
+    background-color: var(--color-secondary);
+    color: var(--color-text-contrast);
+    cursor: pointer;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.appButton:hover {
+    background-color: var(--color-secondary-dark);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.appButton:active {
+    background-color: var(--color-secondary);
+    transition: background-color 0.2s ease-in-out;
+}
