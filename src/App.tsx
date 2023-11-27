@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Welcome from './pages/Welcome';
+import Post from './pages/Post';
+import Home from './pages/Home';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ApolloProvider } from '@apollo/client';
+import client from './graphql/apolloClient';
+
+//React Router app, returning the routes for the imported pages
+//Using react router dom to route the pages
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Welcome />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/post' element={<Post />} />
+        </Routes>
+      </BrowserRouter>
+    </ApolloProvider>
   );
 }
 
