@@ -1,10 +1,13 @@
-import React from 'react'
-import Button from '../../components/button'
-import { useSearchContext } from '../../context/SearchContext'
+import React from 'react';
+import Button from '../../components/Button';
+import { useSearchContext } from '../../context/SearchContext';
 import { useNavigate } from 'react-router-dom';
+import TextInput, { TextInputSizes } from '../../components/TextInput';
+import Skeleton from '../../components/Skeleton';
 
 export default function Welcome(): JSX.Element {
-  const {searchValue, setSearchValue, runSearch} = useSearchContext();
+  const { searchValue, debouncedValue, setSearchValue, runSearch } =
+    useSearchContext();
 
   const navigate = useNavigate();
 
@@ -13,7 +16,8 @@ export default function Welcome(): JSX.Element {
    * @returns {string} The button text
    */
   function getButtonText() {
-    return 'Search All Posts!'
+    if (debouncedValue) return 'Search Posts!';
+    return 'Search All Posts!';
   }
 
   /**
@@ -34,31 +38,39 @@ export default function Welcome(): JSX.Element {
   }
 
   return (
-    <div className='page' data-testid='welcome-page'>
-      <div className='page-content'>
-        <div className='bg-container' data-testid='welcome-bg'>
-          <div className='bg' />
-          <img className='welcome-logo' src={require('../../assets/images/logo-white.png')} alt='logo'/>
-          <h1 className='title'>Find your bike here!</h1>
+    <div className="page" data-testid="welcome-page">
+      <div className="page-content">
+        <div className="bg-container" data-testid="welcome-bg">
+          <div className="bg" />
+          <img
+            className="welcome-logo"
+            src={require('../../assets/images/logo-white.png')}
+            alt="logo"
+          />
+          <h1 className="title">Find your bike here!</h1>
         </div>
-        <div className='panel' data-testid='welcome-panel'>
-          <h1 className='title' data-testid='welcome-title'>
+        <div className="panel" data-testid="welcome-panel">
+          <h1 className="title" data-testid="welcome-title">
             Welcome to Two Wheel Trade!
           </h1>
-          <p className='description' data-testid='welcome-description'>
+          <p className="description" data-testid="welcome-description">
             Search for a specific model or hit the button to search all posts!
           </p>
-          <input
-            type='text'
-            className='search-input'
-            placeholder='Search for a model, brand, post description...'
-            data-testid='welcome-search-input'
-            value={searchValue}
-            onChange={handleSearchInputChange}
+          <div className="search-input-container">
+            <TextInput
+              value={searchValue}
+              onChange={setSearchValue}
+              placeholder="Search for a model, brand, post description..."
+              testId="welcome-search-input"
+            />
+          </div>
+          <Button
+            text={getButtonText()}
+            testId="welcome-search-button"
+            onClick={handleSearchButtonClick}
           />
-          <Button text={getButtonText()} testId='welcome-search-button' onClick={handleSearchButtonClick}/>
         </div>
       </div>
     </div>
-  )
+  );
 }

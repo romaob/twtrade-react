@@ -17,9 +17,9 @@ function App() {
       <AppContextProvider>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Welcome />} />
-            <Route path='/home' element={<Home />} />
-            <Route path='/post' element={<Post />} />
+            <Route path="/" element={<Welcome />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/post" element={<Post />} />
           </Routes>
         </BrowserRouter>
       </AppContextProvider>

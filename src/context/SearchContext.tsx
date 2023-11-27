@@ -1,4 +1,4 @@
-import React, {createContext, useCallback, useState} from 'react';
+import React, { createContext, useCallback, useState } from 'react';
 import useDebounceValue from '../hooks/useDebounceValue';
 
 type SearchContextType = {
@@ -25,29 +25,28 @@ export interface SearchContextProviderProps {
 
 export const useSearchContext = () => React.useContext(SearchContext);
 
-export const SearchContextProvider: React.FC<React.PropsWithChildren<SearchContextProviderProps>> = ({
-  children,
-}) => {
+export const SearchContextProvider: React.FC<
+  React.PropsWithChildren<SearchContextProviderProps>
+> = ({ children }) => {
   const [searchValue, setSearchValue] = useState('');
-  const {debouncedValue} = useDebounceValue({
+  const { debouncedValue } = useDebounceValue({
     value: searchValue,
     delay: 500,
   });
 
-  const runSearch = useCallback(
-    () => {
-      //Set loading and run the graphql query
-    },
-    [debouncedValue],
-  )
+  const runSearch = useCallback(() => {
+    //Set loading and run the graphql query
+  }, [debouncedValue]);
 
   return (
-    <SearchContext.Provider value={{
-      searchValue, 
-      debouncedValue, 
-      setSearchValue, 
-      runSearch
-    }}>
+    <SearchContext.Provider
+      value={{
+        searchValue,
+        debouncedValue,
+        setSearchValue,
+        runSearch,
+      }}
+    >
       {children}
     </SearchContext.Provider>
   );

@@ -1,0 +1,21 @@
+.textInput {
+  flex: 1;
+  border-radius: 1.5rem;
+  border: none;
+  color: var(--color-text);
+  background-color: var(--color-card);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  padding: 0.25rem;
+}
+
+.textInput.text-small {
+  padding: var(--spacing-small);
+}
+
+.textInput.text-medium {
+  padding: var(--spacing-medium);
+}
+
+.textInput.text-large {
+  padding: var(--spacing-large);
+}

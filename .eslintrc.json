@@ -19,5 +19,8 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
-  "rules": {}
+  "rules": {
+    "arrow-body-style": "off",
+    "no-empty-function": "off"
+  }
 }

@@ -1,19 +1,35 @@
-import React from 'react'
+import React from 'react';
 
-import './Button.css'
+import './Button.css';
 
-type Props = {
-    text: string
-    onClick: () => void
-    testId?: string
+export enum ButtonColors {
+  primary = 'primary',
+  secondary = 'secondary',
+  accent = 'accent',
+  transparent = 'transparent',
 }
 
+type Props = {
+  text?: string;
+  onClick: () => void;
+  testId?: string;
+  children?: React.ReactNode;
+  icon?: boolean;
+  color?: ButtonColors;
+};
+
 export default function Button({
-    text,
-    onClick,
-    testId = 'app-button'
+  text = '',
+  onClick,
+  testId = 'app-button',
+  children,
+  icon = false,
+  color = ButtonColors.secondary,
 }: Props) {
-  return (    
-    <button onClick={onClick} className='appButton' data-testid={testId}>{text}</button>
-  )
+  return (
+    <button onClick={onClick} className={`appButton ${color || ''} ${icon ? 'icon' : ''}`} data-testid={testId}>
+      {text}
+      {children}
+    </button>
+  );
 }
