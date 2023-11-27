@@ -1,7 +1,12 @@
 import React from 'react'
 import Button from '../../components/button'
+import { useSearchContext } from '../../context/SearchContext'
+import { useNavigate } from 'react-router-dom';
 
 export default function Welcome(): JSX.Element {
+  const {searchValue, setSearchValue, runSearch} = useSearchContext();
+
+  const navigate = useNavigate();
 
   /**
    * Function to get the button text based on the search input state
@@ -15,7 +20,17 @@ export default function Welcome(): JSX.Element {
    * Function to handle the search button click
    */
   function handleSearchButtonClick() {
-    console.log('Search button clicked!')
+    runSearch();
+    navigate('/home');
+  }
+
+  /**
+   * Function to handle the search input change
+   * @param {React.ChangeEvent<HTMLInputElement>} event The input change event
+   */
+  function handleSearchInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const text = event.target.value;
+    setSearchValue(text || '');
   }
 
   return (
@@ -38,6 +53,8 @@ export default function Welcome(): JSX.Element {
             className='search-input'
             placeholder='Search for a model, brand, post description...'
             data-testid='welcome-search-input'
+            value={searchValue}
+            onChange={handleSearchInputChange}
           />
           <Button text={getButtonText()} testId='welcome-search-button' onClick={handleSearchButtonClick}/>
         </div>
