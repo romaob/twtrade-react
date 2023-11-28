@@ -1,0 +1,186 @@
+[
+  {
+    "_id": {
+      "$oid": "655f77fc4a26857b76d3371d"
+    },
+    "priceNow": 9900,
+    "priceBefore": 9900,
+    "description": "Selling a well-preserved Fat Boy. Only 2300 mi. Selling to upgrade to a bigger one. Comes with all accessories and original parts.",
+    "images": [
+      "https://cdn.dealerspike.com/imglib/v1/800x600/imglib/Assets/Inventory/17/53/1753E52A-E536-4793-89B3-25008F2D310D.jpg",
+      "https://cdn.dealerspike.com/imglib/v1/800x600/imglib/Assets/Inventory/05/14/0514B486-BD65-458F-8D7A-058293C2B64C.jpg",
+      "https://cdn.dealerspike.com/imglib/v1/800x600/imglib/Assets/Inventory/42/E8/42E83D02-1BB1-4B92-8510-6FF349B157FF.jpg",
+      "https://cdn.dealerspike.com/imglib/v1/800x600/imglib/Assets/Inventory/89/7B/897BAE98-7D17-4854-8669-5312A820DC9C.jpg"
+    ],
+    "mileage": 2300,
+    "year": 2019,
+    "createdAt": {
+      "$date": "2023-11-23T16:04:12.613Z"
+    },
+    "updatedAt": {
+      "$date": "2023-11-23T16:04:12.613Z"
+    },
+    "views": 150,
+    "_user": {
+      "$oid": "655f77fc4a26857b76d33711"
+    },
+    "_vehicle": {
+      "$oid": "655f77fc4a26857b76d336f9"
+    },
+    "_brand": {
+      "$oid": "655f77fc4a26857b76d336f2"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "655f77fc4a26857b76d3371e"
+    },
+    "priceNow": 6500,
+    "priceBefore": 7000,
+    "description": "Selling a Rebel 500 in good condition. Perfect for city commuting. Low mileage. Upgrading to a different model.",
+    "images": [
+      "https://cdn1.cycletrader.com/v1/media/6515cfb28558545f905cb71a.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true"
+    ],
+    "mileage": 5000,
+    "year": 2018,
+    "createdAt": {
+      "$date": "2023-11-23T16:04:12.618Z"
+    },
+    "updatedAt": {
+      "$date": "2023-11-23T16:04:12.618Z"
+    },
+    "views": 120,
+    "_user": {
+      "$oid": "655f77fc4a26857b76d3370a"
+    },
+    "_vehicle": {
+      "$oid": "655f77fc4a26857b76d336f8"
+    },
+    "_brand": {
+      "$oid": "655f77fc4a26857b76d336f3"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "655f77fc4a26857b76d3371f"
+    },
+    "priceNow": 11000,
+    "priceBefore": 12000,
+    "description": "Iron 883 for sale. Great condition. 5000 Miles. Selling to fund a new project. Open to negotiations.",
+    "images": [
+      "https://cdn1.cycletrader.com/v1/media/654719fba9951c1b14474a66.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true",
+      "https://cdn1.cycletrader.com/v1/media/654719fca9951c1b14474a67.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true",
+      "https://cdn1.cycletrader.com/v1/media/654719fda9951c1b14474a6c.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true"
+    ],
+    "mileage": 5000,
+    "year": 2018,
+    "createdAt": {
+      "$date": "2023-11-23T16:04:12.623Z"
+    },
+    "updatedAt": {
+      "$date": "2023-11-23T16:04:12.623Z"
+    },
+    "views": 90,
+    "_user": {
+      "$oid": "655f77fc4a26857b76d3370c"
+    },
+    "_vehicle": {
+      "$oid": "655f77fc4a26857b76d336f9"
+    },
+    "_brand": {
+      "$oid": "655f77fc4a26857b76d336f2"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "655f77fc4a26857b76d33720"
+    },
+    "priceNow": 7500,
+    "priceBefore": 8000,
+    "description": "Vulcan S in excellent condition. 8000 miles. Great cruiser bike. Selling due to relocation.",
+    "images": [
+      "https://cdn1.cycletrader.com/v1/media/6398c5b397e885274d348b0b.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true",
+      "https://cdn1.cycletrader.com/v1/media/6398c5b2b0046e627215ee0a.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true",
+      "https://cdn1.cycletrader.com/v1/media/6398c5b25fe7e75bec1dea54.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true"
+    ],
+    "mileage": 8000,
+    "year": 2017,
+    "createdAt": {
+      "$date": "2023-11-23T16:04:12.626Z"
+    },
+    "updatedAt": {
+      "$date": "2023-11-23T16:04:12.626Z"
+    },
+    "views": 80,
+    "_user": {
+      "$oid": "655f77fc4a26857b76d33702"
+    },
+    "_vehicle": {
+      "$oid": "655f77fc4a26857b76d336fa"
+    },
+    "_brand": {
+      "$oid": "655f77fc4a26857b76d336f4"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "655f77fc4a26857b76d33721"
+    },
+    "priceNow": 5500,
+    "priceBefore": 6000,
+    "description": "Classic 500 for sale. Vintage charm. Well-maintained. Upgrading to a newer model. Negotiable.",
+    "images": [
+      "https://cdn1.cycletrader.com/v1/media/6549cd6015ed9960ee58c913.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true",
+      "https://cdn1.cycletrader.com/v1/media/6549cd6015ed9960ee58c914.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true",
+      "https://cdn1.cycletrader.com/v1/media/6549cd6115ed9960ee58c916.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true"
+    ],
+    "mileage": 12000,
+    "year": 2016,
+    "createdAt": {
+      "$date": "2023-11-23T16:04:12.630Z"
+    },
+    "updatedAt": {
+      "$date": "2023-11-23T16:04:12.630Z"
+    },
+    "views": 100,
+    "_user": {
+      "$oid": "655f77fc4a26857b76d33703"
+    },
+    "_vehicle": {
+      "$oid": "655f77fc4a26857b76d336fb"
+    },
+    "_brand": {
+      "$oid": "655f77fc4a26857b76d336f5"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "655f77fc4a26857b76d33722"
+    },
+    "priceNow": 14500,
+    "priceBefore": 15000,
+    "description": "Bonneville Speedmaster for sale. Excellent touring bike. Low mileage. Well-maintained.",
+    "images": [
+      "https://cdn1.cycletrader.com/v1/media/655793c84655296fdc277ee6.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true",
+      "https://cdn1.cycletrader.com/v1/media/655793cb4655296fdc277eea.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true"
+    ],
+    "mileage": 5000,
+    "year": 2019,
+    "createdAt": {
+      "$date": "2023-11-23T16:04:12.633Z"
+    },
+    "updatedAt": {
+      "$date": "2023-11-23T16:04:12.633Z"
+    },
+    "views": 130,
+    "_user": {
+      "$oid": "655f77fc4a26857b76d33704"
+    },
+    "_vehicle": {
+      "$oid": "655f77fc4a26857b76d336fe"
+    },
+    "_brand": {
+      "$oid": "655f77fc4a26857b76d336f6"
+    }
+  }
+]

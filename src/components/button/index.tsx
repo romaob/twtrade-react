@@ -27,7 +27,11 @@ export default function Button({
   color = ButtonColors.secondary,
 }: Props) {
   return (
-    <button onClick={onClick} className={`appButton ${color || ''} ${icon ? 'icon' : ''}`} data-testid={testId}>
+    <button
+      onClick={onClick}
+      className={`appButton ${color || ''} ${icon ? 'icon' : ''}`}
+      data-testid={testId}
+    >
       {text}
       {children}
     </button>

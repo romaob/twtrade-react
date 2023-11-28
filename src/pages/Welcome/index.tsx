@@ -6,7 +6,8 @@ import TextInput, { TextInputSizes } from '../../components/TextInput';
 import Skeleton from '../../components/Skeleton';
 
 export default function Welcome(): JSX.Element {
-  const { searchValue, debouncedValue, setSearchValue, runSearch } =
+  const [text, setText] = React.useState('');
+  const { setSearchFilters, debouncedFilters, searchFilters } =
     useSearchContext();
 
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export default function Welcome(): JSX.Element {
    * @returns {string} The button text
    */
   function getButtonText() {
-    if (debouncedValue) return 'Search Posts!';
+    if (debouncedFilters?.description) return 'Search Posts!';
     return 'Search All Posts!';
   }
 
@@ -24,17 +25,12 @@ export default function Welcome(): JSX.Element {
    * Function to handle the search button click
    */
   function handleSearchButtonClick() {
-    runSearch();
-    navigate('/home');
-  }
-
-  /**
-   * Function to handle the search input change
-   * @param {React.ChangeEvent<HTMLInputElement>} event The input change event
-   */
-  function handleSearchInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const text = event.target.value;
-    setSearchValue(text || '');
+    setSearchFilters &&
+      setSearchFilters({
+        ...searchFilters,
+        description: text,
+      });
+    navigate('/posts');
   }
 
   return (
@@ -58,8 +54,8 @@ export default function Welcome(): JSX.Element {
           </p>
           <div className="search-input-container">
             <TextInput
-              value={searchValue}
-              onChange={setSearchValue}
+              value={text}
+              onChange={setText}
               placeholder="Search for a model, brand, post description..."
               testId="welcome-search-input"
             />

@@ -1,42 +1,44 @@
-[{
-  "_id": {
-    "$oid": "655f77fc4a26857b76d336f2"
+[
+  {
+    "_id": {
+      "$oid": "655f77fc4a26857b76d336f2"
+    },
+    "name": "Harley-Davidson",
+    "img": "https://logos-marques.com/wp-content/uploads/2021/02/Harley-Davidson-Logo.png"
   },
-  "name": "Harley-Davidson",
-  "img": "https://logos-marques.com/wp-content/uploads/2021/02/Harley-Davidson-Logo.png"
-},
-{
-  "_id": {
-    "$oid": "655f77fc4a26857b76d336f3"
+  {
+    "_id": {
+      "$oid": "655f77fc4a26857b76d336f3"
+    },
+    "name": "Honda",
+    "img": "https://logos-marques.com/wp-content/uploads/2021/02/Honda-Moto-Logo-500x283.png"
   },
-  "name": "Honda",
-  "img": "https://logos-marques.com/wp-content/uploads/2021/02/Honda-Moto-Logo-500x283.png"
-},
-{
-  "_id": {
-    "$oid": "655f77fc4a26857b76d336f4"
+  {
+    "_id": {
+      "$oid": "655f77fc4a26857b76d336f4"
+    },
+    "name": "Kawasaki",
+    "img": "https://logos-marques.com/wp-content/uploads/2022/02/Kawasaki-Logo-500x281.png"
   },
-  "name": "Kawasaki",
-  "img": "https://logos-marques.com/wp-content/uploads/2022/02/Kawasaki-Logo-500x281.png"
-},
-{
-  "_id": {
-    "$oid": "655f77fc4a26857b76d336f5"
+  {
+    "_id": {
+      "$oid": "655f77fc4a26857b76d336f5"
+    },
+    "name": "Royal Enfield",
+    "img": "https://logos-marques.com/wp-content/uploads/2022/03/Royal-Enfield-logo-500x281.png"
   },
-  "name": "Royal Enfield",
-  "img": "https://logos-marques.com/wp-content/uploads/2022/03/Royal-Enfield-logo-500x281.png"
-},
-{
-  "_id": {
-    "$oid": "655f77fc4a26857b76d336f6"
+  {
+    "_id": {
+      "$oid": "655f77fc4a26857b76d336f6"
+    },
+    "name": "Triumph",
+    "img": "https://logos-marques.com/wp-content/uploads/2022/03/Triumph-Logo-500x281.png"
   },
-  "name": "Triumph",
-  "img": "https://logos-marques.com/wp-content/uploads/2022/03/Triumph-Logo-500x281.png"
-},
-{
-  "_id": {
-    "$oid": "65624bbdb4ac9ac60d444521"
-  },
-  "name": "test brand",
-  "img": "imgtest"
-}]
+  {
+    "_id": {
+      "$oid": "65624bbdb4ac9ac60d444521"
+    },
+    "name": "test brand",
+    "img": "imgtest"
+  }
+]

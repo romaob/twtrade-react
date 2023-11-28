@@ -1,34 +1,22 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import { SearchContextProvider, useSearchContext } from '../SearchContext';
+import { MockedProvider } from '@apollo/client/testing';
 
-describe('SearchContext tests', () => {
-    it('should render without errors', () => {
-        //TODO    
-    });
+function renderContext() {
+  return (
+    <MockedProvider mocks={[]} addTypename={false}>
+      <SearchContextProvider>
+        <div data-testid="test-child" />
+      </SearchContextProvider>
+    </MockedProvider>
+  );
+}
 
-    it('should have the initial values', () => {
-        //TODO
-    });
+describe('SearchContextProvider', () => {
+  it('renders its children', () => {
+    render(renderContext());
 
-    it('should handle the search text', () => {
-        //TODO
-    });
-
-    it('should handle the makes', () => {
-        //TODO
-    });
-
-    it('should handle the price range', () => {
-        //TODO
-    });
-
-    it('should handle the year range', () => {
-        //TODO
-    });
-
-    it('should handle the mileage range', () => {
-        //TODO
-    });
-
-    it('should handle the search results', () => {
-        //TODO
-    });
+    expect(screen.getByTestId('test-child')).toBeInTheDocument();
+  });
 });

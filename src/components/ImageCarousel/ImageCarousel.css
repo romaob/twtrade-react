@@ -1,0 +1,89 @@
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-next,
+.carousel-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  padding: var(--spacing-small);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.carousel-next:hover,
+.carousel-prev:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-next {
+  right: 0;
+}
+.carousel-prev {
+  left: 0;
+}
+
+.carousel-next img,
+.carousel-prev img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: var(--spacing-small);
+  border-top-right-radius: var(--spacing-small);
+}
+
+.carousel-selectors {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-small);
+  padding: var(--spacing-small);
+}
+
+.carousel-selector {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--color-text-contrast);
+  cursor: pointer;
+  opacity: 0.75;
+}
+.carousel-selector:hover {
+  opacity: 1;
+}
+
+.carousel-empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-disabled);
+  color: var(--color-text-contrast);
+  border-top-left-radius: var(--spacing-small);
+  border-top-right-radius: var(--spacing-small);
+}

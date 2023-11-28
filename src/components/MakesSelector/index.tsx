@@ -1,29 +1,42 @@
-import React from 'react'
+import React from 'react';
 
-import brands from '../../fake-data/twtrade-db.brands.json'
-
-import './MakesSelector.css'
+import './MakesSelector.css';
+import { Brand, useBrands } from '../../graphql/hooks/useBrands';
+import Skeleton from '../Skeleton';
 
 type Props = {
-    value?: string;
-    onChange?: (value: string) => void;
-}
+  brandSelectedID?: string;
+  onChange?: (brand: Brand) => void;
+};
 
 export default function MakesSelector({
-    value = '',
-    onChange = () => {
-        // do nothing
-    },
+  brandSelectedID = '',
+  onChange = () => {
+    // do nothing
+  },
 }: Props): JSX.Element {
+  const {loading, brands} = useBrands();
+
   return (
-    <div className='makes-selector' data-testid='makes-selector'>
+    <Skeleton loading={loading} flex>
+      <div className="makes-selector" data-testid="makes-selector">
         {/* Dropdown selector for the makes */}
-        <select className="makes-selector-select" value={value} onChange={(e) => onChange(e.target.value)}>
-            <option value=''>All Makes</option>
-            {brands.map((brand, i) => (
-                <option key={brand.name + i} value={brand.name}>{brand.name}</option>
-            ))}
+        <select
+          className="makes-selector-select"
+          value={brands?.find((brand) => brand._id === brandSelectedID)?.name || ''}
+          onChange={(e) => {
+            const brand = brands?.find((brand) => brand.name === e.target.value);
+            brand && onChange(brand);
+          }}
+        >
+          <option value="">All Makes</option>
+          {brands?.map((brand, i) => (
+            <option key={brand.name + i} value={brand.name}>
+              {brand.name}
+            </option>
+          ))}
         </select>
-    </div>
-  )
+      </div>
+    </Skeleton>
+  );
 }

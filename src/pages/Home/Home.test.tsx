@@ -1,36 +1,26 @@
+import { MockedProvider } from '@apollo/client/testing';
 import React from 'react';
+import Home from '.';
+import { render, screen } from '@testing-library/react';
+
+function renderComponent() {
+  return (
+    <MockedProvider mocks={[]} addTypename={false}>
+      <Home />
+    </MockedProvider>
+  )
+}
 
 describe('Home page tests', () => {
-    it('should render the page correctly', () => {
-      //TODO  
-    });
-
-    it('should render the page correctly for mobile', () => {
-        //TODO
-    });
-
-    it('should render the menu with its components', () => {
-        //TODO    
-    });
-
-    it('should render the search results panel with its components', () => {
-        //TODO
-    });
-
-    it('should render the page components with the loading state lifecycle', () => {
-        //TODO
-    });
-
-    it('should render the search results with empty results', () => {
-        //TODO
-    });
-
-    it('should render the title based on the search text', () => {
-        //TODO
-    });
-
-    it('should perform the search lifecycle when changing a filter', () => {
-        //TODO
-    });
-
+  it('should render the page correctly', () => {
+    render(renderComponent());
+    expect(screen.getByTestId('home-page')).toBeInTheDocument();
+    expect(screen.getByTestId('search-menu-button-container')).toBeInTheDocument();
+    expect(screen.getByTestId('search-menu')).toBeInTheDocument();
+    expect(screen.getByTestId('menu')).toBeInTheDocument();
+    expect(screen.getByTestId('menu-logo')).toBeInTheDocument();
+    expect(screen.getByTestId('search-content')).toBeInTheDocument();
+    expect(screen.getByTestId('search-results')).toBeInTheDocument();
+    expect(screen.getByTestId('filters')).toBeInTheDocument();
+  });
 });
