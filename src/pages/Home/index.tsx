@@ -7,6 +7,8 @@ import Filters from '../../components/Filters';
 
 import PostCard from '../../components/PostCard';
 import { Post } from '../../graphql/hooks/usePostWithFilters';
+import SidePanel from '../../components/SidePanel';
+import ProfileMenu from '../../components/ProfileMenu';
 
 export default function Home(): JSX.Element {
   const [showMenu, setShowMenu] = useState(false);
@@ -139,6 +141,7 @@ export default function Home(): JSX.Element {
       <div className="search-content" data-testid="search-content">
         <div className="search-top">
           <h1 className="search-term-title">{getTitle()}</h1>
+          <ProfileMenu />
         </div>
         <div className="search-results" data-testid="search-results">{getResults()}</div>
       </div>

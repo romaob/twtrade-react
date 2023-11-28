@@ -71,3 +71,9 @@ h5 {
   font-size: var(--text-small);
   font-weight: normal;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
