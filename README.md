@@ -14,7 +14,7 @@ This is the React web app for Two Wheels Trade project, consuming the GraphQL AP
 
 ## Installation
 
-Make sure you have the backend server twtrade-api and the database twtrade-db running on your local machine.
+Make sure you have the backend server [twtrade-api](https://github.com/romaob/twtrade-api) and the database [twtrade-db](https://github.com/romaob/twtrade-db) running on your local machine.
 
 1. Clone the repository.
 2. Install dependencies using `npm install` or `yarn install`.
