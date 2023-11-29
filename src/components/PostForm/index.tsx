@@ -27,41 +27,8 @@ type FormValues = {
   images?: string[];
 };
 
-const test = {
-  brand: {
-    __typename: 'Brand',
-    name: 'Harley-Davidson',
-    img: 'https://logos-marques.com/wp-content/uploads/2021/02/Harley-Davidson-Logo.png',
-    _id: '655f77fc4a26857b76d336f2',
-  },
-  vehicle: {
-    __typename: 'Vehicle',
-    _id: '655f77fc4a26857b76d336f7',
-    name: 'Harley Davidson Fat Boy',
-    model: 'Fat Boy',
-    avgPrice: 20000,
-    horsepower: 65,
-    torque: 90,
-    engine: 'V-Twin',
-    weight: 710,
-  },
-  price: '9250',
-  year: '2012',
-  mileage: '20100',
-  description:
-    'The 2012 Harley-Davidson® Softail® Fat Boy® FLSTF is one of the quintessential cruiser motorcycles. Hearkening to the "hardtail" choppers of the \'60\'s and \'70\'s, the Harley-Davidson Fat Boy motorcycle keeps that heritage alive more than forty years later. The FLSTF Fat Boy is the original "fat custom" bike—laid-back and luxurious with an unmistakable profile on the road. New for 2012, the Harley Fat Boy features a new, larger air-cooled Twin Cam 103™ Harley engine with 6-speed cruise drive transmission, providing more power for passing, hill-climbing, and riding with passenger and luggage. Take a seat on this Harley and get the experience of one of the 2012 Harley cruiser motorcycles. Learn about other Harley Softail motorcycles in addition to this cruiser. Look at the Heritage Softail® Classic too, this classic motorcycle is ready for the road. If you like choppers, be sure to take a look at the Fat Boy® Lo, another of the custom Harley motorcycles.',
-  images: [
-    'https://cdn1.cycletrader.com/v1/media/656630436f43677a310d1666.jpg?width=1024&height=768&quality=70&bestfit=true&upsize=true&blurBackground=true&blurValue=100&upsize=true',
-    'https://cdn1.cycletrader.com/v1/media/656630446f43677a310d1667.jpg',
-    'https://cdn1.cycletrader.com/v1/media/656630446f43677a310d1668.jpg',
-    'https://cdn1.cycletrader.com/v1/media/656630456f43677a310d166c.jpg',
-  ],
-};
-
 export default function PostForm({ show, onClose }: Props) {
-  const [formValues, setFormValues] = useState<FormValues>(
-    JSON.parse(JSON.stringify(test)),
-  );
+  const [formValues, setFormValues] = useState<FormValues>({});
   const [iamgeText, setIamgeText] = useState('');
   const { handleCreatePost, data, loading } = useCreatePost();
   const { profile } = useProfileContext();
