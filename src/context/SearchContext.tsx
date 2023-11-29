@@ -23,6 +23,7 @@ type SearchContextType = {
   searchFilters?: SearchFilters | null;
   setSearchFilters?: (filters: SearchFilters) => void;
   debouncedFilters?: SearchFilters | null;
+  reSearch?: () => void;
 };
 
 export const SearchContext = createContext<SearchContextType>({
@@ -51,7 +52,8 @@ export const SearchContextProvider: React.FC<
     value: searchFilters,
     delay: 500,
   });
-  const { loading, data, error } = usePostsWithFilters(debouncedFilters);
+  const { loading, data, error, refetch } =
+    usePostsWithFilters(debouncedFilters);
 
   return (
     <SearchContext.Provider
@@ -61,6 +63,7 @@ export const SearchContextProvider: React.FC<
         searchFilters,
         setSearchFilters,
         debouncedFilters,
+        reSearch: refetch,
       }}
     >
       {children}

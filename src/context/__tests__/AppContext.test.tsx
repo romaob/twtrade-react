@@ -10,7 +10,7 @@ describe('AppContextProvider', () => {
         <AppContextProvider>
           <div data-testid="test-child" />
         </AppContextProvider>
-      </MockedProvider>
+      </MockedProvider>,
     );
 
     expect(screen.getByTestId('test-child')).toBeInTheDocument();

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './MakesSelector.css';
 import { Brand, useBrands } from '../../graphql/hooks/useBrands';
 import Skeleton from '../Skeleton';
 
@@ -15,17 +14,21 @@ export default function MakesSelector({
     // do nothing
   },
 }: Props): JSX.Element {
-  const {loading, brands} = useBrands();
+  const { loading, brands } = useBrands();
 
   return (
     <Skeleton loading={loading} flex>
-      <div className="makes-selector" data-testid="makes-selector">
+      <div className="selector" data-testid="makes-selector">
         {/* Dropdown selector for the makes */}
         <select
-          className="makes-selector-select"
-          value={brands?.find((brand) => brand._id === brandSelectedID)?.name || ''}
+          className="selector-select"
+          value={
+            brands?.find((brand) => brand._id === brandSelectedID)?.name || ''
+          }
           onChange={(e) => {
-            const brand = brands?.find((brand) => brand.name === e.target.value);
+            const brand = brands?.find(
+              (brand) => brand.name === e.target.value,
+            );
             brand && onChange(brand);
           }}
         >

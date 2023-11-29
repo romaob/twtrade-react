@@ -8,39 +8,40 @@
 }
 
 .side-panel {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    padding: var(--spacing-medium);
-    background-color: var(--color-card);  
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-    animation: slide-in 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  padding: var(--spacing-medium);
+  background-color: var(--color-card);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  animation: slide-in 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
 }
 
 .top-actions {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .side-panel-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-medium);
-    margin-block-start: var(--spacing-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  margin-block-start: var(--spacing-medium);
 }
 
 .side-panel-actions {
-    display: flex;
-    gap: var(--spacing-medium);
-    margin-block-start: var(--spacing-medium);
-    justify-content: flex-end;
-    padding-block: var(--spacing-xlarge);
+  display: flex;
+  gap: var(--spacing-medium);
+  margin-block-start: var(--spacing-medium);
+  justify-content: flex-end;
+  padding-block: var(--spacing-xlarge);
+  justify-self: flex-end;
 }
 
 @keyframes slide-in {

@@ -8,14 +8,16 @@ function renderComponent() {
     <MockedProvider mocks={[]} addTypename={false}>
       <Home />
     </MockedProvider>
-  )
+  );
 }
 
 describe('Home page tests', () => {
   it('should render the page correctly', () => {
     render(renderComponent());
     expect(screen.getByTestId('home-page')).toBeInTheDocument();
-    expect(screen.getByTestId('search-menu-button-container')).toBeInTheDocument();
+    expect(
+      screen.getByTestId('search-menu-button-container'),
+    ).toBeInTheDocument();
     expect(screen.getByTestId('search-menu')).toBeInTheDocument();
     expect(screen.getByTestId('menu')).toBeInTheDocument();
     expect(screen.getByTestId('menu-logo')).toBeInTheDocument();

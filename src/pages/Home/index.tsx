@@ -9,15 +9,21 @@ import PostCard from '../../components/PostCard';
 import { Post } from '../../graphql/hooks/usePostWithFilters';
 import SidePanel from '../../components/SidePanel';
 import ProfileMenu from '../../components/ProfileMenu';
+import { useProfileContext } from '../../context/ProfileContext';
+import PostForm from '../../components/PostForm';
 
 export default function Home(): JSX.Element {
   const [showMenu, setShowMenu] = useState(false);
+  const [showPostForm, setShowPostForm] = useState(false);
+  const { profile } = useProfileContext();
+
   const {
     searchFilters,
     setSearchFilters,
     debouncedFilters,
     searchLoading,
     searchData,
+    reSearch,
   } = useSearchContext();
 
   function handleToggleMenuClick() {
@@ -105,6 +111,17 @@ export default function Home(): JSX.Element {
     }
   }
 
+  function handleTogglePostForm() {
+    setShowPostForm(!showPostForm);
+  }
+
+  function handleCreatePostFormClose(refresh: boolean) {
+    setShowPostForm(false);
+    if (refresh) {
+      reSearch && reSearch();
+    }
+  }
+
   React.useEffect(() => {
     if (!searchFilters) {
       setSearchFilters && setSearchFilters({});
@@ -114,7 +131,10 @@ export default function Home(): JSX.Element {
   return (
     <div className="page" data-testid="home-page">
       <div className="search-menu-container" data-testid="search-menu">
-        <div className="search-menu-button-container" data-testid="search-menu-button-container">
+        <div
+          className="search-menu-button-container"
+          data-testid="search-menu-button-container"
+        >
           <Button
             onClick={handleToggleMenuClick}
             icon
@@ -128,7 +148,10 @@ export default function Home(): JSX.Element {
             />
           </Button>
         </div>
-        <div className={`search-menu ${showMenu ? 'show' : ''}`} data-testid="menu">
+        <div
+          className={`search-menu ${showMenu ? 'show' : ''}`}
+          data-testid="menu"
+        >
           <img
             src={require('../../assets/images/logo-white.png')}
             alt="logo"
@@ -141,10 +164,21 @@ export default function Home(): JSX.Element {
       <div className="search-content" data-testid="search-content">
         <div className="search-top">
           <h1 className="search-term-title">{getTitle()}</h1>
+          {profile && (
+            <Button
+              text="Post an ad"
+              color={ButtonColors.accent}
+              onClick={handleTogglePostForm}
+            />
+          )}
+          <div className="space" />
           <ProfileMenu />
         </div>
-        <div className="search-results" data-testid="search-results">{getResults()}</div>
+        <div className="search-results" data-testid="search-results">
+          {getResults()}
+        </div>
       </div>
+      <PostForm show={showPostForm} onClose={handleCreatePostFormClose} />
     </div>
   );
 }

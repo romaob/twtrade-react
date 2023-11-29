@@ -21,7 +21,7 @@ export default function TextInput({
   value,
   onChange,
   testId = 'app-text-input',
-  size = TextInputSizes.MEDIUM,
+  size = TextInputSizes.SMALL,
   placeholder = '',
   type = 'text',
 }: TextInputProps) {

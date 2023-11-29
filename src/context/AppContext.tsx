@@ -10,9 +10,7 @@ export const AppContextProvider: React.FC<React.PropsWithChildren> = ({
   return (
     <AppContext.Provider value={{}}>
       <ProfileContextProvider>
-      <SearchContextProvider>
-      {children}
-      </SearchContextProvider>
+        <SearchContextProvider>{children}</SearchContextProvider>
       </ProfileContextProvider>
     </AppContext.Provider>
   );

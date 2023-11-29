@@ -20,19 +20,27 @@ const post: Post = {
     email: '',
     profile: {
       name: '',
-      profileImage: ''
-    }
+      profileImage: '',
+    },
   },
   createdAt: '',
   description: '',
   updatedAt: '',
-  views: 0
+  views: 0,
 };
 
 describe('PostCard component tests', () => {
   it('should render the component correctly', () => {
-    render(<PostCard post={post} loading={false} onSelect={() => {/**/}}/>);
-    expect(screen.getByTestId('post-card')).toBeInTheDocument();  
+    render(
+      <PostCard
+        post={post}
+        loading={false}
+        onSelect={() => {
+          /**/
+        }}
+      />,
+    );
+    expect(screen.getByTestId('post-card')).toBeInTheDocument();
     expect(screen.getByTestId('card-image')).toBeInTheDocument();
     expect(screen.getByTestId('card-content')).toBeInTheDocument();
     expect(screen.queryAllByTestId('card-info')).toHaveLength(2);
@@ -47,7 +55,7 @@ describe('PostCard component tests', () => {
 
   it('should call onSelect with the post when selected', () => {
     const onSelect = jest.fn();
-    render(<PostCard post={post} loading={false} onSelect={onSelect}/>);
+    render(<PostCard post={post} loading={false} onSelect={onSelect} />);
     expect(onSelect).not.toHaveBeenCalled();
     screen.getByTestId('post-card').click();
     expect(onSelect).toHaveBeenCalledTimes(1);

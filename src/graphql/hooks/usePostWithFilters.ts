@@ -38,6 +38,7 @@ interface UsePostsWithFiltersResult {
   loading: boolean;
   error?: ApolloError;
   data?: Data;
+  refetch?: () => void;
 }
 
 export function usePostsWithFilters(
@@ -45,7 +46,7 @@ export function usePostsWithFilters(
 ): UsePostsWithFiltersResult {
   //dont run the query if there is no filters
   // Run the query
-  const { loading, error, data } = useQuery(POSTS_WITH_FILTERS_QUERY, {
+  const { loading, error, data, refetch } = useQuery(POSTS_WITH_FILTERS_QUERY, {
     variables: filters || {},
     skip: !filters,
   });
@@ -57,5 +58,5 @@ export function usePostsWithFilters(
   if (error) return { loading: false, error };
 
   // Return the data
-  return { loading: false, data };
+  return { loading: false, data, refetch };
 }

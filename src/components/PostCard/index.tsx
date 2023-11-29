@@ -26,7 +26,9 @@ export default function PostCard({ post, loading, onSelect }: Props) {
         <div className="card-content" data-testid="card-content">
           <h2>{post._vehicle.name}</h2>
           <div className="card-info" data-testid="card-info">
-            <h3 className="price" data-testid="price">$ {post.priceNow}</h3>
+            <h3 className="price" data-testid="price">
+              $ {post.priceNow}
+            </h3>
             {post.priceBefore && post.priceBefore !== post.priceNow && (
               <h4 className="price-before" data-testid="price-before">
                 $ {post.priceBefore}

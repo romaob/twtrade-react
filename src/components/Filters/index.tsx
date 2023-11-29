@@ -19,7 +19,8 @@ export default function Filters(): JSX.Element {
   }
 
   function handleOnBrandSelect(brand: Brand) {
-    setSearchFilters && setSearchFilters({ ...searchFilters, brand: brand._id });
+    setSearchFilters &&
+      setSearchFilters({ ...searchFilters, brand: brand._id });
   }
 
   return (
@@ -38,7 +39,10 @@ export default function Filters(): JSX.Element {
 
       <h4>Makes:</h4>
       <div className="filter">
-        <MakesSelector brandSelectedID={searchFilters?.brand || ''} onChange={handleOnBrandSelect} />
+        <MakesSelector
+          brandSelectedID={searchFilters?.brand || ''}
+          onChange={handleOnBrandSelect}
+        />
       </div>
 
       <h4>Price:</h4>

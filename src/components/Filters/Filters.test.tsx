@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { MockedProvider } from "@apollo/client/testing";
+import { MockedProvider } from '@apollo/client/testing';
 import React from 'react';
 import Filters from '.';
 import { AppContextProvider } from '../../context/AppContext';
@@ -13,7 +13,7 @@ const componentWrapper = () => (
     </AppContextProvider>
   </MockedProvider>
 );
-  
+
 jest.mock('../../graphql/hooks/useBrands', () => ({
   useBrands: () => ({
     brands: [
@@ -42,7 +42,7 @@ describe('Filters component tests', () => {
     expect(screen.getByText('Makes:')).toBeInTheDocument();
     expect(screen.getByText('Price:')).toBeInTheDocument();
     expect(screen.getByTestId('price-min')).toBeInTheDocument();
-    expect(screen.getByTestId('price-max')).toBeInTheDocument();    
+    expect(screen.getByTestId('price-max')).toBeInTheDocument();
     expect(screen.getByTestId('year-min')).toBeInTheDocument();
     expect(screen.getByTestId('year-max')).toBeInTheDocument();
     expect(screen.getByText('Mileage:')).toBeInTheDocument();

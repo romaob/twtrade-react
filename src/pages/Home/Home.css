@@ -66,10 +66,11 @@
 .search-top {
   margin-inline-start: 4rem;
   display: flex;
+  align-items: center;
+  gap: var(--spacing-large);
 }
 
 .search-term-title {
-  flex: 1;
   font-size: var(--text-xlarge);
   font-weight: normal;
 }
